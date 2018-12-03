@@ -3,7 +3,7 @@ FROM devilbox/php-fpm:7.4-prod
 RUN isvr_version="1.1.5" \
     && apt-get update \
     && apt-get install -y --no-install-recommends openssh-server \
-    && echo "root:Docker!" | chpasswd
+    && echo "root:Docker!" | chpasswd \
     && echo "installing" \
     && cd /tmp/ \
     && wget https://github.com/IdeaSpaceVR/IdeaSpace/releases/download/v${isvr_version}/IdeaSpace-${isvr_version}.tar.gz \
