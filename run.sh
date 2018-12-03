@@ -8,4 +8,6 @@ echo "installing" \
     && mv IdeaSpace${isvr_version}/* /var/www/html/ \
     && chown -R apache.apache /var/www/html/*
     
-    
+# Tweaks to give Apache/PHP write permissions to the app
+chown -R www-data:staff /var/www
+chown -R www-data:staff /app
