@@ -9,8 +9,8 @@ RUN isvr_version="1.1.5" \
     && wget https://github.com/IdeaSpaceVR/IdeaSpace/releases/download/v${isvr_version}/IdeaSpace-${isvr_version}.tar.gz \
     && tar zxvf IdeaSpace-${isvr_version}.tar.gz \
     && mv IdeaSpace${isvr_version}/* /var/www/html/ \
-    && chown -R www-data:staff /var/www \
-    && chown -R www-data:staff /app
+    #&& chown -R www-data:staff /var/www \
+    #&& chown -R www-data:staff /app
 
 EXPOSE 80 443 
 CMD ["/run.sh"]
