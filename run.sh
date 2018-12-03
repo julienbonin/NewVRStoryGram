@@ -1,6 +1,8 @@
 #!/bin/sh
 # Built by Tim Fournet - tfournet@radersolutions.com
 
+date
+
 isvr_version="1.1.5"
 echo "installing" \
     && cd /tmp/ \
