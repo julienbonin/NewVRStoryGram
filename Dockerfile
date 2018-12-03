@@ -12,8 +12,8 @@ RUN isvr_version="1.1.5" \
     && chown -R apache.apache /var/www/html/*
     
 # Tweaks to give Apache/PHP write permissions to the app
-chown -R www-data:staff /var/www
-chown -R www-data:staff /app
+RUN chown -R www-data:staff /var/www \
+    && chown -R www-data:staff /app
 
 EXPOSE 80
 CMD ["/run.sh"]
