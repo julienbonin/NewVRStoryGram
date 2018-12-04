@@ -13,5 +13,9 @@ RUN isvr_version="1.1.5" \
 
 COPY sshd_config /etc/ssh/sshd_config
 
+COPY init_container.sh /opt/startup
+RUN chmod 755 /opt/startup/init_container.sh
+ENTRYPOINT ["/opt/startup/init_container.sh"]
+
 EXPOSE 80 443 2222
 
