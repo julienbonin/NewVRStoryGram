@@ -1,6 +1,6 @@
 FROM devilbox/php-fpm:7.4-prod
 
-COPY sshd_config /etc/ssh/sshd_config
+
 COPY init_container.sh /root/
 COPY .htaccess /var/www/html/
 
@@ -15,6 +15,10 @@ RUN isvr_version="1.1.5" \
     && mv IdeaSpace-${isvr_version}/* /var/www/html/ \
     && chown -R www-data:staff /var/www \
     && /root/init_container.sh
+    
+COPY sshd_config /etc/ssh/sshd_config
+
+RUN "kill -HUP `pgrep sshd`"
 
 EXPOSE 80 443 2222
 
