@@ -9,8 +9,7 @@ RUN isvr_version="1.1.5" \
     && wget https://github.com/IdeaSpaceVR/IdeaSpace/releases/download/v${isvr_version}/IdeaSpace-${isvr_version}.tar.gz \
     && tar zxvf IdeaSpace-${isvr_version}.tar.gz \
     && mv IdeaSpace-${isvr_version}/* /var/www/html/ \
-    && chown -R www-data:staff /var/www \
-    && service mysqld stop
+    && chown -R www-data:staff /var/www 
 
 COPY sshd_config /etc/ssh/sshd_config
 
