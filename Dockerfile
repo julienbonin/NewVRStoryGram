@@ -1,8 +1,7 @@
 FROM devilbox/php-fpm:7.4-prod
 
-
 COPY sshd_config /etc/ssh/sshd_config
-COPY init_container.sh /root/startup
+COPY init_container.sh /root/
 
 RUN isvr_version="1.1.5" \
     && apt-get update \
