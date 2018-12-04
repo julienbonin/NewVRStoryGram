@@ -19,7 +19,7 @@ RUN isvr_version="1.1.5" \
     
 COPY sshd_config /etc/ssh/sshd_config
 
-RUN kill -HUP $(pgrep sshd)
+#RUN kill -HUP $(pgrep sshd)
 
 EXPOSE 80 443 2222
 
