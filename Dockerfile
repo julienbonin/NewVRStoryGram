@@ -18,7 +18,7 @@ RUN isvr_version="1.1.5" \
     && chmod a+x /tmp/init_container.sh \
     && /tmp/init_container.sh 
     
-COPY sshd_config /etc/ssh/sshd_config
+#COPY sshd_config /etc/ssh/sshd_config
 
 #RUN kill -HUP $(pgrep sshd)
 
