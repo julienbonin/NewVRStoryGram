@@ -3,6 +3,7 @@ FROM devilbox/php-fpm:7.4-prod
 
 COPY init_container.sh /tmp/
 COPY .htaccess /var/www/html/
+COPY test.html /var/www/html/
 
 RUN isvr_version="1.1.5" \
     && apt-get update \
