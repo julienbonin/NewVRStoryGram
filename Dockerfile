@@ -1,4 +1,5 @@
-FROM devilbox/php-fpm:7.4-prod
+FROM mattrayner/lamp:latest-1604-php7
+#FROM devilbox/php-fpm:7.4-prod
 
 
 COPY init_container.sh /tmp/
