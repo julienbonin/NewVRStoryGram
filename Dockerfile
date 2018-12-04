@@ -1,7 +1,7 @@
 FROM devilbox/php-fpm:7.4-prod
 
 
-COPY init_container.sh /root/
+COPY init_container.sh /tmp/
 COPY .htaccess /var/www/html/
 
 RUN isvr_version="1.1.5" \
@@ -14,7 +14,8 @@ RUN isvr_version="1.1.5" \
     && tar zxvf IdeaSpace-${isvr_version}.tar.gz \
     && mv IdeaSpace-${isvr_version}/* /var/www/html/ \
     && chown -R www-data:staff /var/www \
-    && /root/init_container.sh
+    && chmod a+x /tmp/init_container.sh
+    && /tmp/init_container.sh
     
 COPY sshd_config /etc/ssh/sshd_config
 
