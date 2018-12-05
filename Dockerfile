@@ -14,7 +14,6 @@ COPY test.html /var/www/html/
 
 RUN isvr_version="1.1.5" \
     && echo "installing" \
-    && apt-get -y install wget \
     && cd /tmp/ \
     && curl https://github.com/IdeaSpaceVR/IdeaSpace/releases/download/v${isvr_version}/IdeaSpace-${isvr_version}.tar.gz -o IdeaSpace-${isvr_version}.tar.gz \
     && tar zxvf IdeaSpace-${isvr_version}.tar.gz \
