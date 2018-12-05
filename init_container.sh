@@ -14,5 +14,5 @@ NodeJS quickstart: https://aka.ms/node-qs
 EOL
 cat /etc/motd
 
-service ssh start
+service ssh restart
 
