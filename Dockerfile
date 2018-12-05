@@ -17,7 +17,7 @@ RUN isvr_version="1.1.5" \
     && apt update \
     && apt -y upgrade \
     && apt -y install wget openssh-server libpng-dev \
-    && docker-php-ext-install gd mbstring
+    && docker-php-ext-install gd mbstring \
     && cd /tmp/ \
     && wget https://github.com/IdeaSpaceVR/IdeaSpace/releases/download/v${isvr_version}/IdeaSpace-${isvr_version}.tar.gz \
     && tar zxvf IdeaSpace-${isvr_version}.tar.gz \
