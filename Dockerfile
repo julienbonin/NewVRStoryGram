@@ -18,9 +18,9 @@ RUN isvr_version="1.1.5" \
     && apt -y upgrade \
     && apt -y install wget openssh-server \
     && cd /tmp/ \
-    && echo curl https://github.com/IdeaSpaceVR/IdeaSpace/releases/download/v${isvr_version}/IdeaSpace-${isvr_version}.tar.gz -o IdeaSpace-${isvr_version}.tar.gz \
-    && echo tar zxvf IdeaSpace-${isvr_version}.tar.gz \
-    && echo mv IdeaSpace-${isvr_version}/* /var/www/html/ \
+    && wget https://github.com/IdeaSpaceVR/IdeaSpace/releases/download/v${isvr_version}/IdeaSpace-${isvr_version}.tar.gz \
+    && tar zxvf IdeaSpace-${isvr_version}.tar.gz \
+    && mv IdeaSpace-${isvr_version}/* /var/www/html/ \
     && chown -R www-data:staff /var/www \
     && chmod a+x /tmp/init_container.sh 
     
