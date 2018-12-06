@@ -12,4 +12,7 @@ Documentation: http://aka.ms/webapp-linux
 NodeJS quickstart: https://aka.ms/node-qs
 
 EOL
+
+service ssh start
+
 cat /etc/motd
