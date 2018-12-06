@@ -1,12 +1,9 @@
-#FROM mattrayner/lamp:latest-1604-php7
-#FROM devilbox/php-fpm:7.4-prod
-
 FROM php:apache
 SHELL ["/bin/bash", "-c"]
 
 RUN ln -s ../mods-available/{expires,headers,rewrite}.load /etc/apache2/mods-enabled/
 RUN sed -e '/<Directory \/var\/www\/>/,/<\/Directory>/s/AllowOverride None/AllowOverride All/' -i /etc/apache2/apache2.conf
-#COPY php.ini /usr/local/etc/php/
+COPY php.ini /usr/local/etc/php/
 
 COPY init_container.sh /tmp/
 COPY .htaccess /var/www/html/
@@ -28,11 +25,8 @@ RUN isvr_version="1.1.5" \
 COPY sshd_config /etc/ssh/sshd_config
 RUN service ssh restart
 
-COPY php.ini /usr/local/etc/php/
-
 RUN /tmp/init_container.sh 
 
 #RUN kill -HUP $(pgrep sshd)
 
 EXPOSE 80 2222
-
