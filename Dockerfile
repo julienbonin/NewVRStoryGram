@@ -26,7 +26,7 @@ COPY vars.php /var/www/html/
 
 RUN printenv | sed -e "s/$/'<br>/g" > /var/www/html/env.html
 
-ENTRYPOINT ["/usr/local/bin/init_container.sh"]
+RUN /usr/local/bin/init_container.sh
 
 EXPOSE 80 2222
 
