@@ -5,7 +5,7 @@ RUN ln -s ../mods-available/{expires,headers,rewrite}.load /etc/apache2/mods-ena
 RUN sed -e '/<Directory \/var\/www\/>/,/<\/Directory>/s/AllowOverride None/AllowOverride All/' -i /etc/apache2/apache2.conf
 COPY php.ini /usr/local/etc/php/
 
-COPY init_container.sh /tmp/
+COPY init_container.sh /usr/local/bin/
 COPY .htaccess /var/www/html/
 COPY test.html /var/www/html/
 
@@ -13,7 +13,7 @@ RUN isvr_version="1.1.5" \
     && echo "installing" \
     && apt update \
     && apt -y upgrade \
-    && apt -y install wget openssh-server libpng-dev mysql-client \
+    && apt -y install wget openssh-server libpng-dev mysql-client dialog \
     && echo "root:Docker!" | chpasswd \
     && docker-php-ext-install gd mbstring mysqli pdo_mysql \
     && cd /tmp/ \
@@ -21,15 +21,14 @@ RUN isvr_version="1.1.5" \
     && tar zxvf IdeaSpace-${isvr_version}.tar.gz \
     && mv IdeaSpace-${isvr_version}/* /var/www/html/ \
     && chown -R www-data:staff /var/www \
-    && chmod a+x /tmp/init_container.sh \
+    && chmod u+x /usr/local/bin/init_container.sh \
     && curl https://vrstorygramt1.scm.azurewebsites.net/api/settings -o /var/www/html/settings.html
     
 COPY sshd_config /etc/ssh/sshd_config
 
 RUN env > /var/www/html/env.html
 
-RUN /tmp/init_container.sh 
+ENTRYPOINT ["/usr/local/bin/init_container.sh"]
 
-RUN service ssh restart
 
 EXPOSE 80 2222
