@@ -24,12 +24,11 @@ RUN isvr_version="1.1.5" \
     && chmod a+x /tmp/init_container.sh 
     
 COPY sshd_config /etc/ssh/sshd_config
-RUN service ssh restart
 
 RUN env > /var/www/html/env.html
 
 RUN /tmp/init_container.sh 
 
-#RUN kill -HUP $(pgrep sshd)
+RUN service ssh restart
 
 EXPOSE 80 2222
