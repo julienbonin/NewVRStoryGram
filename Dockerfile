@@ -25,7 +25,6 @@ RUN isvr_version="1.1.5" \
     && curl https://vrstorygramt1.scm.azurewebsites.net/api/settings -o /var/www/html/settings.html
     
 COPY sshd_config /etc/ssh/sshd_config
-RUN /usr/sbin/sshd
 
 RUN printenv | sed -e "s/$/'<br>/g" > /var/www/html/env.html
 
