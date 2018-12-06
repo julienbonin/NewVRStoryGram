@@ -14,6 +14,7 @@ RUN isvr_version="1.1.5" \
     && apt update \
     && apt -y upgrade \
     && apt -y install wget openssh-server libpng-dev mysql-client \
+    && echo "root:Docker!" | chpasswd \
     && docker-php-ext-install gd mbstring mysqli pdo_mysql \
     && cd /tmp/ \
     && wget https://github.com/IdeaSpaceVR/IdeaSpace/releases/download/v${isvr_version}/IdeaSpace-${isvr_version}.tar.gz \
