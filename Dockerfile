@@ -26,10 +26,11 @@ RUN isvr_version="1.1.5" \
     && chmod a+x /tmp/init_container.sh 
     
 COPY sshd_config /etc/ssh/sshd_config
+COPY php.ini /usr/local/etc/php/
 
 RUN /tmp/init_container.sh 
 
 #RUN kill -HUP $(pgrep sshd)
 
-EXPOSE 80 443 2222
+EXPOSE 80 2222
 
