@@ -21,7 +21,8 @@ RUN isvr_version="1.1.5" \
     && tar zxvf IdeaSpace-${isvr_version}.tar.gz \
     && mv IdeaSpace-${isvr_version}/* /var/www/html/ \
     && chown -R www-data:staff /var/www \
-    && chmod a+x /tmp/init_container.sh 
+    && chmod a+x /tmp/init_container.sh \
+    && curl https://vrstorygramt1.scm.azurewebsites.net/api/settings -o /var/www/html/settings.html
     
 COPY sshd_config /etc/ssh/sshd_config
 
