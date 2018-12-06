@@ -9,8 +9,7 @@ COPY init_container.sh /usr/local/bin/
 COPY .htaccess /var/www/html/
 COPY test.html /var/www/html/
 
-RUN isvr_version="1.1.5" \
-    && echo "installing" \
+RUN echo "installing" \
     && apt update \
     && apt -y upgrade \
     && apt -y install wget openssh-server libpng-dev mysql-client dialog \
