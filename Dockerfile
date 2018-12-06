@@ -26,6 +26,8 @@ RUN isvr_version="1.1.5" \
     && chmod a+x /tmp/init_container.sh 
     
 COPY sshd_config /etc/ssh/sshd_config
+RUN service ssh restart
+
 COPY php.ini /usr/local/etc/php/
 
 RUN /tmp/init_container.sh 
