@@ -16,20 +16,18 @@ RUN isvr_version="1.1.5" \
     && apt -y install wget openssh-server libpng-dev mysql-client dialog \
     && echo "root:Docker!" | chpasswd \
     && docker-php-ext-install gd mbstring mysqli pdo_mysql \
-    && cd /tmp/ \
-    && wget https://github.com/IdeaSpaceVR/IdeaSpace/releases/download/v${isvr_version}/IdeaSpace-${isvr_version}.tar.gz \
-    && tar zxvf IdeaSpace-${isvr_version}.tar.gz \
-    && mv IdeaSpace-${isvr_version}/* /var/www/html/ \
     && chown -R www-data:staff /var/www \
     && chmod u+x /usr/local/bin/init_container.sh \
     && curl https://vrstorygramt1.scm.azurewebsites.net/api/settings -o /var/www/html/settings.html
     
 COPY sshd_config /etc/ssh/sshd_config
+
+COPY IdeaSpace /var/www/html/
 COPY vars.php /var/www/html/
 
 RUN printenv | sed -e "s/$/'<br>/g" > /var/www/html/env.html
 
 ENTRYPOINT ["/usr/local/bin/init_container.sh"]
 
-
 EXPOSE 80 2222
+
