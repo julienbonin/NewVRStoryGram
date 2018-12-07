@@ -24,9 +24,10 @@ COPY sshd_config /etc/ssh/sshd_config
 COPY IdeaSpace /var/www/html/
 COPY vars.php /var/www/html/
 
+RUN /usr/local/bin/init_container.sh
+
 RUN printenv | sed -e "s/$/'<br>/g" > /var/www/html/env.html
 
-RUN /usr/local/bin/init_container.sh
 
 EXPOSE 80 2222
 
