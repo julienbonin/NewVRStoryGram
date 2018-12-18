@@ -1,3 +1,3 @@
 <?php
-echo 'My variables are ' .$_ENV . '!';
+var_dump(get_defined_vars());
 ?>
