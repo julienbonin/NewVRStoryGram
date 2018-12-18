@@ -1,4 +1,4 @@
-FROM php:apache
+FROM php:7.2-apache
 SHELL ["/bin/bash", "-c"]
 
 RUN ln -s ../mods-available/{expires,headers,rewrite}.load /etc/apache2/mods-enabled/
