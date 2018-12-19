@@ -21,13 +21,12 @@ RUN echo "installing" \
     && service ssh start \
     && echo "root:Docker!" | chpasswd \
     && docker-php-ext-install gd mbstring pdo_mysql \
-    && chown -R www-data:staff /var/www \
-    && chmod u+x /usr/local/bin/init_container.sh
+    && chown -R www-data:staff /var/www 
     
 
-RUN /usr/local/bin/init_container.sh
+#RUN /usr/local/bin/init_container.sh
 
-RUN printenv | sed -e "s/$/'<br>/g" > /var/www/html/env.html
+#RUN printenv | sed -e "s/$/'<br>/g" > /var/www/html/env.html
 
 
 EXPOSE 80 2222
