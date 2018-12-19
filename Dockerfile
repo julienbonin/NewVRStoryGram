@@ -22,8 +22,7 @@ RUN echo "installing" \
     && echo "root:Docker!" | chpasswd \
     && docker-php-ext-install gd mbstring pdo_mysql \
     && chown -R www-data:staff /var/www \
-    && chmod u+x /usr/local/bin/init_container.sh \
-    && curl https://vrstorygramt1.scm.azurewebsites.net/api/settings -o /var/www/html/settings.html
+    && chmod u+x /usr/local/bin/init_container.sh
     
 
 RUN /usr/local/bin/init_container.sh
