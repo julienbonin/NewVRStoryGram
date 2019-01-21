@@ -4,7 +4,7 @@ SHELL ["/bin/bash", "-c"]
 # RUN 
 # RUN 
 #COPY php.ini /etc/php/
-
+RUN env > env.txt
 COPY init_container.sh /usr/local/bin/
 COPY .htaccess /var/www/html/
 COPY test.html /var/www/html/
