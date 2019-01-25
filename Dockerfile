@@ -15,11 +15,11 @@ COPY IdeaSpace /var/www/html/
 COPY vars.php /var/www/html/
 
 RUN echo "installing" \
-    && yum -y install initscripts apt-utils wget openssh-server libpng-dev mysql-client dialog \
+    && yum -y install systemd apt-utils wget openssh-server libpng-dev mysql-client dialog \
     && cp /tmp/sshd_config.in /etc/ssh/sshd_config \
     && echo "root:Docker!" | chpasswd \
     && chown -R apache.apache /var/www \
-    && /sbin/service sshd start 
+    && /usr/sbin/systemctl start ssh
     
 
 #RUN /usr/local/bin/init_container.sh
