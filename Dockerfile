@@ -1,4 +1,5 @@
 FROM centos/php-71-centos7
+USER root
 SHELL ["/bin/bash", "-c"]
 
 # RUN 
