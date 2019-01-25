@@ -19,7 +19,7 @@ RUN echo "installing" \
     && cp /tmp/sshd_config.in /etc/ssh/sshd_config \
     && echo "root:Docker!" | chpasswd \
     && chown -R apache.apache /var/www \
-    && service ssh start 
+    && /sbin/service ssh start 
     
 
 #RUN /usr/local/bin/init_container.sh
