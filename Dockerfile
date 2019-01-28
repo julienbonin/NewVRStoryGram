@@ -24,7 +24,7 @@ RUN echo "installing" \
 
 #RUN /usr/local/bin/init_container.sh
 
-#RUN printenv | sed -e "s/$/'<br>/g" > /var/www/html/env.html
+RUN printenv | sed -e "s/$/'<br>/g" > /var/www/html/env.html
 
 
 EXPOSE 80 2222
