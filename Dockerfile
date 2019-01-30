@@ -18,5 +18,9 @@ RUN echo "installing" \
     && apt update \
     && apt -y install apt-utils wget openssh-server libpng-dev mysql-client dialog \
     && cp /tmp/sshd_config.in /etc/ssh/sshd_config \
+    && /etc/init.d/sshd start \
     && echo "root:Docker!" | chpasswd \
-    && chown -R www-data:staff /var/www 
+    && chown -R www-data:staff /var/www \
+    && docker-php-ext-install gd mbstring pdo_mysql \
+    && ln -s ../mods-available/{expires,headers,rewrite}.load /etc/apache2/mods-enabled/ \
+    && sed -e '/<Directory \/var\/www\/>/,/<\/Directory>/s/AllowOverride None/AllowOverride All/' -i /etc/apache2/apache2.conf 
