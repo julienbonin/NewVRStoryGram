@@ -15,7 +15,7 @@ COPY IdeaSpace /var/www/html/
 COPY vars.php /var/www/html/
 
 RUN echo "installing" \
-    && apt -y install wget openssh-server libpng-dev mysql-client dialog \
+    && apt -y install openssh-server libpng-dev mysql-client dialog \
     && cp /tmp/sshd_config.in /etc/ssh/sshd_config \
     && echo "root:Docker!" | chpasswd \
     && chown -R apache.apache /var/www 
