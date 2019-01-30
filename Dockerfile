@@ -26,7 +26,7 @@ RUN echo "installing" \
 
 RUN printenv | sed -e "s/$/'<br>/g" > /var/www/html/env.html
 
-ENTRYPOINT /usr/bin/httpd
+ENTRYPOINT /usr/bin/httpd -X
 
 EXPOSE 80 2222
 
