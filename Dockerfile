@@ -16,9 +16,9 @@ COPY vars.php /var/www/html/
 
 RUN echo "installing" \
     && apt update \
-    && apt -y install apt-utils wget openssh-server libpng-dev mysql-client dialog \
+    && apt -y install vim apt-utils wget openssh-server libpng-dev mysql-client dialog \
     && cp /tmp/sshd_config.in /etc/ssh/sshd_config \
-    && /etc/init.d/ssh start \
+    && /etc/init.d/ssh restart \
     && echo "root:Docker!" | chpasswd \
     && chown -R www-data:staff /var/www \
     && docker-php-ext-install gd mbstring pdo_mysql \
