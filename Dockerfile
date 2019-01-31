@@ -24,4 +24,4 @@ RUN echo "installing" \
     && docker-php-ext-install gd mbstring pdo_mysql \
     && ln -s ../mods-available/{expires,headers,rewrite}.load /etc/apache2/mods-enabled/ \
     && sed -e '/<Directory \/var\/www\/>/,/<\/Directory>/s/AllowOverride None/AllowOverride All/' -i /etc/apache2/apache2.conf \
-    && apachectl restart
+    && apachectl -k graceful
