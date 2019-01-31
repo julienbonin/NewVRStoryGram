@@ -1,5 +1,5 @@
 <?php
-var_dump(get_defined_vars());
+var_dump(getenv('mysql_host'));
 env(radertestslot);
 env('mysql_host');
 ?>
