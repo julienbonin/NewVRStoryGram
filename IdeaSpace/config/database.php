@@ -60,7 +60,7 @@ return [
             'password'  => env('mysql_password', ''),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
+            'prefix'    => env('mysql_prefix', 'isvr_'),
             'strict'    => false,
         ],
 
