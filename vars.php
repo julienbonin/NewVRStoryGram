@@ -6,4 +6,5 @@ var_dump(getenv('mysql_password'));
 var_dump(getenv('app_debug'));
 var_dump(getenv('mysql_prefix'));
 var_dump(getenv('defaultConnection'));
+phpinfo();
 ?>

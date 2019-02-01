@@ -7,6 +7,10 @@ COPY sshd_config /tmp/sshd_config.in
 COPY IdeaSpace /var/www/html/
 COPY vars.php /var/www/html/
 
+COPY run.sh /
+RUN  chmod 755 /run.sh
+COPY start-mysqld.sh /
+
 RUN echo "installing" \
     && apt update \
     && apt -y install vim apt-utils wget openssh-server libpng-dev mysql-client dialog
