@@ -65,6 +65,6 @@ else
 fi
 
 echo "Starting SSH Daemon"
-service ssh start 
+/sbin/service ssh start 
 
 exec supervisord -n
