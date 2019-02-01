@@ -9,7 +9,10 @@ COPY vars.php /var/www/html/
 
 COPY run.sh /
 RUN  chmod 755 /run.sh
+
 COPY start-mysqld.sh /
+RUN chmod 755 /start-mysqld.sh
+
 
 RUN echo "installing" \
     && apt update \
