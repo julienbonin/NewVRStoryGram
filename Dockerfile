@@ -7,14 +7,13 @@ COPY sshd_config /tmp/sshd_config.in
 COPY IdeaSpace /var/www/html/
 COPY vars.php /var/www/html/
 
-#COPY run.sh /
-#COPY start-mysqld.sh /
 
 
 RUN echo "installing" \
     && apt update \
     && apt -y install vim apt-utils wget openssh-server libpng-dev mysql-client dialog \
     && cat /tmp/sshd_config.in > /etc/ssh/sshd_config \
+    && echo "/sbin/service ssh start" >> /run.sh \
     && echo "root:Docker!" | chpasswd \
     && chown -R www-data:staff /var/www 
 
