@@ -5,9 +5,6 @@ SHELL ["/bin/bash", "-c"]
 COPY sshd_config /tmp/sshd_config.in
 
 COPY IdeaSpace /var/www/html/
-COPY vars.php /var/www/html/
-
-
 
 RUN echo "installing" \
     && apt update \
