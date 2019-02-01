@@ -10,7 +10,7 @@ RUN echo "installing" \
     && apt update \
     && apt -y install vim apt-utils wget openssh-server libpng-dev mysql-client dialog \
     && cat /tmp/sshd_config.in > /etc/ssh/sshd_config \
-    && echo "/sbin/service ssh start" >> /run.sh \
+    && echo "/usr/sbin/service ssh start" >> /run.sh \
     && echo "root:Docker!" | chpasswd \
     && chown -R www-data:staff /var/www 
 
