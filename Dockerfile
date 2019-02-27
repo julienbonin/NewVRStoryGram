@@ -1,3 +1,5 @@
+#Change Earth to Mars JB 2-27-19
+
 FROM mattrayner/lamp:latest-1604-php7
 
 SHELL ["/bin/bash", "-c"]
