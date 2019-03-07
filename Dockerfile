@@ -1,4 +1,4 @@
-#Change Earth to Mars JB 02/27/2019
+# Change Earth to Mars - JB 02/27/2019
 # Added "Construction In Progress!" code to the "welcome_frontpage.blade.php" file - JB 03/01/2019
 
 FROM mattrayner/lamp:latest-1604-php7
