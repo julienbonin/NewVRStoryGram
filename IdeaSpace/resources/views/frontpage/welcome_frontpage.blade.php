@@ -29,7 +29,7 @@
 <body>
 <div class="spaceTop"></div>
 <div class="main">
-<div class="logo"><img src="LOGO.jpg" alt="VRStoryGram Logo" id="logo"></div>
+<div class="logo"><img src="/LOGO.jpg" alt="VRStoryGram Logo" id="logo"></div>
 <div class="p1"><p1>Construction In Progress!</p1></div>
 </div>
 </body>
