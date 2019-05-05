@@ -8,7 +8,7 @@
 
 <body>
   <header>
-    <div class="logo_div"><a href="/index.php"><img src="/img/LOGO.jpg" alt="VRStoryGram Logo" id="logo"></a></div>
+    <div class="logo_div"><a href="../welcome_frontpage.blade.php"><img src="/img/LOGO.jpg" alt="VRStoryGram Logo" id="logo"></a></div>
     <div class="nav_1_div"><a href="readme.php">What is VRStoryGram</a></div>
     <div class="nav_2_div"><a href="createAccount.php">Create</a></div>
     <div class="nav_3_div"><a href="about.php">Team VRStroyGram</a></div>
