@@ -2,8 +2,8 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/SiteFiles/css/normalize.css">
-  <link rel="stylesheet" href="/SiteFiles/css/style.css">
+  <link rel="stylesheet" href="SiteFiles/css/normalize.css">
+  <link rel="stylesheet" href="SiteFiles/css/style.css">
   <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
 </head>
 
