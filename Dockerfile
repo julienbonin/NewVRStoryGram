@@ -11,6 +11,10 @@ COPY sshd_config /tmp/sshd_config.in
 
 COPY IdeaSpace /var/www/html/
 
+COPY index.php /var/www/html/
+
+COPY site /var/www/html/
+
 RUN echo "installing" \
     && apt update \
     && apt -y install vim apt-utils wget openssh-server libpng-dev mysql-client dialog \
