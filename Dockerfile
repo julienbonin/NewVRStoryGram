@@ -8,7 +8,7 @@ SHELL ["/bin/bash", "-c"]
 
 COPY sshd_config /tmp/sshd_config.in
 
-COPY site /var/www/html/
+COPY site/ /var/www/html/
 
 COPY index.php /var/www/html/
 
