@@ -11,15 +11,15 @@
 <body>
   <header>
     <div class="logo_div"><a href="index.php"><img src="site/img/LOGO.jpg" alt="VRStoryGram Logo" id="logo"></a></div>
-    <div class="nav_1_div"><a href="site/inc/readme.php">What is VRStoryGram</a></div>
-    <div class="nav_2_div"><a href="site/inc/createAccount.php">Create</a></div>
-    <div class="nav_3_div"><a href="site/inc/about.php">Team VRStroyGram</a></div>
-    <div class="nav_4_div"><a href="site/inc/login.php">Login</a></div>
+    <div class="nav_1_div"><a href="inc/readme.php">What is VRStoryGram</a></div>
+    <div class="nav_2_div"><a href="inc/createAccount.php">Create</a></div>
+    <div class="nav_3_div"><a href="inc/about.php">Team VRStroyGram</a></div>
+    <div class="nav_4_div"><a href="inc/login.php">Login</a></div>
   </header>
   <div class="content_div">
     <div class="index_content_div">
 
-      <div class="featured_content"><iframe width="100%" height="100%"  allowfullscreen frameborder="0" src="http://vrstorygram.local/vr/<?php include('site/scripts/latest_storygram_script.php'); echo $latest_storygram; ?>"></iframe></div>
+      <div class="featured_content"><iframe width="100%" height="100%"  allowfullscreen frameborder="0" src="http://vrstorygram.local/vr/<?php include('scripts/latest_storygram_script.php'); echo $latest_storygram; ?>"></iframe></div>
 
       <div class="newest_content">
         <h1>Latest StoryGrams</h1>
