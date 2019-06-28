@@ -19,7 +19,7 @@
   <div class="content_div">
     <div class="index_content_div">
 
-      <div class="featured_content"><iframe width="100%" height="100%"  allowfullscreen frameborder="0" src="http://vrstorygram.local/vr/<?php include('scripts/latest_storygram_script.php'); echo $latest_storygram; ?>"></iframe></div>
+      <div class="featured_content"> <!-- <iframe width="100%" height="100%"  allowfullscreen frameborder="0" src="http://vrstorygram.local/vr/<?php include('scripts/latest_storygram_script.php'); echo $latest_storygram; ?>"></iframe> --> </div>
 
       <div class="newest_content">
         <h1>Latest StoryGrams</h1>
